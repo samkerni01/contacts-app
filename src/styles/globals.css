@@ -1,0 +1,19 @@
+* {
+	font-family: 'Inter', sans-serif;
+	margin: 0;
+}
+
+#root {
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+:root {
+	--black: #212429;
+	--white: #fff;
+	--grey: #98989e;
+	--blue: #3183ff;
+	--gold: #fff172;
+}
