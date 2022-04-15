@@ -1,3 +1,5 @@
+import auth from '../../store/auth';
+
 import email from './icons/email.svg';
 import lock from './icons/lock.svg';
 
@@ -6,12 +8,10 @@ import styles from './SignIn.module.css';
 export default function SignIn() {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
 		const data = new FormData(e.currentTarget);
 
-		console.log({
-			email: data.get('email'),
-			password: data.get('password')
-		});
+		auth.validation(data);
 	};
 
 	return (
