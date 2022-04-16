@@ -1,0 +1,13 @@
+{
+	"login": {
+		"email": "elonmusk@mars.com",
+		"password": "xaea-12"
+	},
+	"contacts": [
+		{
+			"id": "0",
+			"name": "Sam",
+			"number": "89996098988"
+		}
+	]
+}

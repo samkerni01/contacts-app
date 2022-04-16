@@ -1,0 +1,17 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	align-items: center;
+	border-bottom: 1px solid var(--grey);
+	padding-bottom: 10px;
+}
+
+.title {
+	font-size: 25px;
+	color: var(--black);
+}
+
+.icon {
+	cursor: pointer;
+	padding-left: 20px;
+}

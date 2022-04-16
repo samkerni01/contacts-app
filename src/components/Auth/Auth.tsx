@@ -1,11 +1,11 @@
-import auth from '../../store/auth';
+import auth from '../../stores/auth';
 
 import email from './icons/email.svg';
 import lock from './icons/lock.svg';
 
-import styles from './SignIn.module.css';
+import styles from './Auth.module.css';
 
-export default function SignIn() {
+export default function Auth() {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
