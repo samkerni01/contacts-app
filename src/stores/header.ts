@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-class App {
+class Header {
 	showForm = false;
 
 	constructor() {
@@ -12,4 +12,4 @@ class App {
 	}
 }
 
-export default new App();
+export default new Header();
