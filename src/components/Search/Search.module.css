@@ -1,0 +1,22 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	align-items: center;
+	column-gap: 10px;
+}
+
+.icon {
+	margin-left: 10px;
+}
+
+.input {
+	width: calc(100% - 10px);
+}
+
+@media screen and (max-width: 550px) {
+	.wrapper {
+		grid-column: 1 / -1;
+		margin-top: 20px;
+		justify-content: left;
+	}
+}

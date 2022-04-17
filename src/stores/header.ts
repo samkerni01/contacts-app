@@ -1,14 +1,19 @@
 import { makeAutoObservable } from 'mobx';
 
 class Header {
-	showForm = false;
+	displayForm = false;
+	displaySearch = false;
 
 	constructor() {
 		makeAutoObservable(this);
 	}
 
-	setShowForm() {
-		this.showForm = !this.showForm;
+	setDisplayForm() {
+		this.displayForm = !this.displayForm;
+	}
+
+	setDisplaySearch() {
+		this.displaySearch = !this.displaySearch;
 	}
 }
 

@@ -1,11 +1,12 @@
 import { observer } from 'mobx-react-lite';
 
 import Form from '../Form/Form';
+import Search from '../Search/Search';
 
 import header from '../../stores/header';
 
-import search from './icons/search.svg';
-import add from './icons/add.svg';
+import { ReactComponent as SearchIcon } from './icons/search.svg';
+import { ReactComponent as AddIcon } from './icons/add.svg';
 
 import styles from './Header.module.css';
 
@@ -14,18 +15,23 @@ function Header() {
 		<div className={styles.wrapper}>
 			<h1 className={styles.title}>Contact list</h1>
 
-			{header.showForm ? (
+			{header.displayForm ? (
 				<Form />
 			) : (
 				<>
-					<img
-						className={styles.icon}
-						src={add}
-						alt="add"
-						onClick={() => header.setShowForm()}
-					/>
+					{header.displaySearch ? (
+						<>
+							<Search />
+						</>
+					) : (
+						<>
+							<AddIcon onClick={() => header.setDisplayForm()} />
 
-					<img className={styles.icon} src={search} alt="search" />
+							<SearchIcon
+								onClick={() => header.setDisplaySearch()}
+							/>
+						</>
+					)}
 				</>
 			)}
 		</div>
