@@ -1,11 +1,11 @@
-import header from '../../stores/header';
+import UiStore from '../../stores/UiStore';
 
 import { ReactComponent as CheckIcon } from './check.svg';
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 
-import styles from './Form.module.css';
+import styles from './AddContact.module.css';
 
-export default function Form() {
+export default function AddContact() {
 	return (
 		<form className={styles.wrapper}>
 			Name:
@@ -19,7 +19,7 @@ export default function Form() {
 
 				<CloseIcon
 					className={styles.icon}
-					onClick={() => header.setDisplayForm()}
+					onClick={() => UiStore.setForm()}
 				/>
 			</div>
 		</form>

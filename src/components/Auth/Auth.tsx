@@ -1,6 +1,6 @@
-import auth from '../../stores/auth';
+import AuthStore from '../../stores/AuthStore';
 
-import email from './icons/email.svg';
+import profile from './icons/profile.svg';
 import lock from './icons/lock.svg';
 
 import styles from './Auth.module.css';
@@ -11,7 +11,7 @@ export default function Auth() {
 
 		const data = new FormData(e.currentTarget);
 
-		auth.validation(data);
+		AuthStore.validation(data);
 	};
 
 	return (
@@ -19,14 +19,14 @@ export default function Auth() {
 			<div className={styles.title}>Welcome!</div>
 			<div className={styles.descr}>Enter your login details</div>
 
-			<div className={styles.text}>E-Mail</div>
+			<div className={styles.text}>Username</div>
 			<div className={styles.relative}>
-				<img className={styles.icon} src={email} alt="email" />
+				<img className={styles.icon} src={profile} alt="profile" />
 				<input
 					className={styles.input}
 					type="text"
-					name="email"
-					placeholder="e.g.: elonmusk@mars.com"
+					name="username"
+					placeholder="e.g.: admin"
 				/>
 			</div>
 
@@ -37,7 +37,7 @@ export default function Auth() {
 					className={styles.input}
 					type="text"
 					name="password"
-					placeholder="e.g.: xaea-12"
+					placeholder="e.g.: admin"
 				/>
 			</div>
 

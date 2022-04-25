@@ -4,13 +4,8 @@
 	padding: 0;
 }
 
-svg {
-	cursor: pointer;
-	margin-left: 20px;
-}
-
-svg:hover {
-	fill: var(--blue);
+ul {
+	list-style-type: none;
 }
 
 input {

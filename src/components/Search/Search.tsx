@@ -1,4 +1,4 @@
-import header from '../../stores/header';
+import UiStore from '../../stores/UiStore';
 
 import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 
@@ -11,7 +11,7 @@ export default function Search() {
 			<input type="text" className={styles.input} />
 			<CloseIcon
 				className={styles.icon}
-				onClick={() => header.setDisplaySearch()}
+				onClick={() => UiStore.setSearch()}
 			/>
 		</div>
 	);

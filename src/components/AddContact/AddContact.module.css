@@ -19,13 +19,18 @@
 }
 
 .icon {
-	margin-left: 0;
+	cursor: pointer;
+}
+
+.icon:hover {
+	fill: var(--blue);
 }
 
 @media screen and (max-width: 850px) {
 	.wrapper {
 		grid-column: 1 / -1;
 		margin-top: 20px;
+		justify-content: left;
 	}
 }
 

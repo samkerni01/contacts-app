@@ -1,13 +1,13 @@
 {
 	"login": {
-		"email": "elonmusk@mars.com",
-		"password": "xaea-12"
+		"username": "admin",
+		"password": "admin"
 	},
 	"contacts": [
 		{
 			"id": "0",
 			"name": "Sam",
-			"number": "89996098988"
+			"phone": "89996098988"
 		}
 	]
 }

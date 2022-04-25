@@ -6,7 +6,12 @@
 }
 
 .icon {
+	cursor: pointer;
 	margin-left: 10px;
+}
+
+.icon:hover {
+	fill: var(--blue);
 }
 
 .input {

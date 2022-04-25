@@ -1,17 +1,22 @@
 import { observer } from 'mobx-react-lite';
 
-import Header from '../Header/Header';
+import AppHeader from '../AppHeader/AppHeader';
 import Auth from '../Auth/Auth';
+import ContactList from '../ContactList/ContactList';
 
-import auth from '../../stores/auth';
+import AuthStore from '../../stores/AuthStore';
 
 import styles from './App.module.css';
 import '../../styles/globals.css';
 
 function App() {
-	return auth.passed ? (
+	return AuthStore.passed ? (
 		<div className={styles.wrapper}>
-			<Header />
+			<AppHeader />
+
+			<main>
+				<ContactList />
+			</main>
 		</div>
 	) : (
 		<Auth />

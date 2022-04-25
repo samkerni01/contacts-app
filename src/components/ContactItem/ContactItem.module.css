@@ -1,0 +1,11 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: auto auto 1fr auto auto;
+	column-gap: 20px;
+	align-items: center;
+}
+
+.btn:hover {
+	color: var(--blue);
+	cursor: pointer;
+}
