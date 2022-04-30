@@ -1,7 +1,7 @@
 import AuthStore from '../../stores/AuthStore';
 
-import profile from './icons/profile.svg';
-import lock from './icons/lock.svg';
+import { ReactComponent as ProfileIcon } from '../../icons/profile.svg';
+import { ReactComponent as LockIcon } from './lock.svg';
 
 import styles from './Auth.module.css';
 
@@ -16,12 +16,13 @@ export default function Auth() {
 
 	return (
 		<form className={styles.wrapper} onSubmit={handleSubmit}>
-			<div className={styles.title}>Welcome!</div>
-			<div className={styles.descr}>Enter your login details</div>
+			<h1 className={styles.title}>Welcome!</h1>
+			<p className={styles.descr}>Enter your login details</p>
+			<span className={styles.text}>Username</span>
 
-			<div className={styles.text}>Username</div>
 			<div className={styles.relative}>
-				<img className={styles.icon} src={profile} alt="profile" />
+				<ProfileIcon className={styles.icon} />
+
 				<input
 					className={styles.input}
 					type="text"
@@ -30,9 +31,11 @@ export default function Auth() {
 				/>
 			</div>
 
-			<div className={`${styles.text} ${styles.mt24}`}>Password</div>
+			<span className={`${styles.text} ${styles.mt24}`}>Password</span>
+
 			<div className={styles.relative}>
-				<img className={styles.icon} src={lock} alt="lock" />
+				<LockIcon className={styles.icon} />
+
 				<input
 					className={styles.input}
 					type="text"

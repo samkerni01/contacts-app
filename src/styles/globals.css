@@ -19,11 +19,20 @@ input:focus {
 	outline: 1px solid var(--blue);
 }
 
+svg {
+	cursor: pointer;
+}
+
+svg:hover {
+	fill: var(--blue);
+}
+
 #app {
 	height: 100vh;
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	margin: 0 16px;
 }
 
 :root {

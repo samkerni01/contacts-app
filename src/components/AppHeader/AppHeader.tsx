@@ -17,23 +17,19 @@ function AppHeader() {
 
 			{UiStore.form ? (
 				<AddContact />
+			) : UiStore.search ? (
+				<Search />
 			) : (
 				<>
-					{UiStore.search ? (
-						<Search />
-					) : (
-						<>
-							<AddIcon
-								className={styles.icon}
-								onClick={() => UiStore.setForm()}
-							/>
+					<AddIcon
+						className={styles.icon}
+						onClick={() => UiStore.setForm()}
+					/>
 
-							<SearchIcon
-								className={styles.icon}
-								onClick={() => UiStore.setSearch()}
-							/>
-						</>
-					)}
+					<SearchIcon
+						className={styles.icon}
+						onClick={() => UiStore.setSearch()}
+					/>
 				</>
 			)}
 		</header>

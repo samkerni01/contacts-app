@@ -1,13 +1,13 @@
 {
-	"login": {
-		"username": "admin",
-		"password": "admin"
-	},
-	"contacts": [
-		{
-			"id": "0",
-			"name": "Sam",
-			"phone": "89996098988"
-		}
-	]
+  "login": {
+    "username": "admin",
+    "password": "admin"
+  },
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Sam Kerniol",
+      "phone": "+79996098988"
+    }
+  ]
 }

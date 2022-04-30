@@ -18,14 +18,6 @@
 	column-gap: 20px;
 }
 
-.icon {
-	cursor: pointer;
-}
-
-.icon:hover {
-	fill: var(--blue);
-}
-
 @media screen and (max-width: 850px) {
 	.wrapper {
 		grid-column: 1 / -1;

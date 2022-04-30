@@ -51,6 +51,14 @@
 	position: absolute;
 	top: 13px;
 	left: 15px;
+	width: 12px;
+	height: 15px;
+	fill: var(--grey);
+	cursor: unset;
+}
+
+.icon:hover {
+	fill: var(--grey);
 }
 
 .btn {
@@ -74,4 +82,8 @@
 
 .relative {
 	position: relative;
+}
+
+.error {
+	border: 1px solid red;
 }

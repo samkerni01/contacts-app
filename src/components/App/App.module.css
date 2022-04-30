@@ -1,8 +1,7 @@
 .wrapper {
 	display: grid;
-	grid-template-columns: minmax(auto, 1140px);
+	grid-template-columns: minmax(auto, 768px);
 	border: 2px solid #ececec;
 	border-radius: 16px;
 	padding: 48px 40px;
-	margin: 0 16px;
 }

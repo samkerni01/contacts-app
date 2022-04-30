@@ -1,24 +1,31 @@
-import { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import ContactItem from '../ContactItem/ContactItem';
 
-import TodoStore from '../../stores/TodoStore';
+import ContactStore from '../../stores/ContactStore';
 
 import styles from './ContactList.module.css';
 
 function ContactList() {
-	useEffect(() => {
-		TodoStore.fetchContactList();
-	}, []);
-
 	return (
-		<ul className={styles.wrapper}>
-			{TodoStore.contactList &&
-				TodoStore.contactList.map((contact) => (
-					<ContactItem contact={contact} key={contact.id} />
-				))}
-		</ul>
+		<div className={styles.wrapper}>
+			{ContactStore.filteredContacts.length > 0 ? (
+				<>
+					{ContactStore.filteredContacts.map((contact) => (
+						<ContactItem
+							name={contact.name}
+							phone={contact.phone}
+							id={contact.id}
+							key={contact.id}
+						/>
+					))}
+				</>
+			) : ContactStore.contacts.length > 0 ? (
+				<p>No matches found</p>
+			) : (
+				<p>Contact list is empty</p>
+			)}
+		</div>
 	);
 }
 

@@ -1,19 +1,52 @@
-import { ReactComponent as ProfileIcon } from './profile.svg';
+import { observer } from 'mobx-react-lite';
+
+import EditContact from '../EditContact/EditContact';
+
+import ContactStore from '../../stores/ContactStore';
+import UiStore from '../../stores/UiStore';
+
+import { ReactComponent as ProfileIcon } from '../../icons/profile.svg';
 
 import styles from './ContactItem.module.css';
 
-export default function ContactItem({
-	contact
+function ContactItem({
+	name,
+	phone,
+	id
 }: {
-	contact: { name: string; phone: string };
+	name: string;
+	phone: string;
+	id: number;
 }) {
+	const onClick = () => {
+		UiStore.setEdit(id);
+	};
+
 	return (
-		<li className={styles.wrapper}>
-			<ProfileIcon />
-			<span>{contact.name}</span>
-			<span>{contact.phone}</span>
-			<span className={styles.btn}>Edit</span>
-			<span className={styles.btn}>Delete</span>
-		</li>
+		<div className={styles.wrapper}>
+			<ProfileIcon className={styles.icon} />
+
+			{UiStore.edit !== id ? (
+				<>
+					<span className={styles.name}>{name}</span>
+					<span className={styles.phone}>{phone}</span>
+
+					<span className={styles.btn} onClick={onClick}>
+						Edit
+					</span>
+
+					<span
+						className={styles.btn}
+						onClick={() => ContactStore.deleteContact(id)}
+					>
+						Delete
+					</span>
+				</>
+			) : (
+				<EditContact name={name} phone={phone} />
+			)}
+		</div>
 	);
 }
+
+export default observer(ContactItem);

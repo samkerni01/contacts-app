@@ -1,5 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
+import ContactStore from './ContactStore';
+
 class AuthStore {
 	passed = false;
 
@@ -7,8 +9,8 @@ class AuthStore {
 		makeAutoObservable(this);
 	}
 
-	async validation(data: FormData) {
-		await fetch('http://localhost:3001/login')
+	validation(data: FormData) {
+		fetch('http://localhost:3001/login')
 			.then((res) => res.json())
 			.then((json) => {
 				if (
@@ -17,6 +19,7 @@ class AuthStore {
 				) {
 					runInAction(() => {
 						this.passed = true;
+						ContactStore.fetchContacts();
 					});
 				}
 			});

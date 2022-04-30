@@ -12,10 +12,5 @@
 }
 
 .icon {
-	cursor: pointer;
 	margin-left: 20px;
-}
-
-.icon:hover {
-	fill: var(--blue);
 }
