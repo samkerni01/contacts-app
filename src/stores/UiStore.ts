@@ -6,7 +6,7 @@ class UiStore {
 	form = false;
 	search = false;
 	error = false;
-	edit = 0;
+	edit = -1;
 
 	constructor() {
 		makeAutoObservable(this);
@@ -26,8 +26,8 @@ class UiStore {
 		this.error = true;
 	}
 
-	setEdit(id: number) {
-		this.edit = id;
+	setEdit(i: number) {
+		this.edit = i;
 	}
 }
 

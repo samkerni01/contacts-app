@@ -8,7 +8,9 @@ import App from './app';
 const root = createRoot(document.getElementById('app')!);
 
 root.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>
+	<StrictMode>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</StrictMode>
 );

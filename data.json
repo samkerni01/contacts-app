@@ -1,13 +1,13 @@
 {
-  "login": {
-    "username": "admin",
-    "password": "admin"
-  },
-  "contacts": [
-    {
-      "id": "ZYpf8jwb2smviLYiD4fiy",
-      "name": "Sam Kerniol",
-      "phone": "+79996098988"
-    }
-  ]
+	"login": {
+		"username": "admin",
+		"password": "admin"
+	},
+	"contacts": [
+		{
+			"id": "3p6sIjFu-tv853Dr3m97g",
+			"name": "Sam Kerniol",
+			"phone": "+79996098988"
+		}
+	]
 }

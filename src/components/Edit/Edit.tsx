@@ -16,7 +16,7 @@ export default function Edit({
 }: {
 	name: string;
 	phone: string;
-	id: number;
+	id: string;
 	i: number;
 }) {
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -44,7 +44,7 @@ export default function Edit({
 
 			<CloseIcon
 				className={styles.icon}
-				onClick={() => UiStore.setEdit(0)}
+				onClick={() => UiStore.setEdit(-1)}
 			/>
 
 			<input

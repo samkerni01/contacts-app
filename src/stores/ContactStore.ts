@@ -3,7 +3,7 @@ import { makeAutoObservable, runInAction } from 'mobx';
 import UiStore from './UiStore';
 
 interface List {
-	id: number;
+	id: string;
 	name: string;
 	phone: string;
 }
@@ -60,13 +60,13 @@ class ContactStore {
 			});
 	}
 
-	deleteContact(id: number, i: number) {
+	deleteContact(id: string, i: number) {
 		fetch('http://localhost:3001/contacts/' + id, {
 			method: 'DELETE'
 		}).then(() => runInAction(() => this.contacts.splice(i, 1)));
 	}
 
-	editContact(id: number, data: FormData, i: number) {
+	editContact(id: string, data: FormData, i: number) {
 		fetch('http://localhost:3001/contacts/' + id, {
 			method: 'PATCH',
 			headers: {
@@ -81,7 +81,7 @@ class ContactStore {
 			.then((json) => {
 				runInAction(() => this.contacts.splice(i, 1, json));
 
-				UiStore.setEdit(0);
+				UiStore.setEdit(-1);
 			});
 	}
 }

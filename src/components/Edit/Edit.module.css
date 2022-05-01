@@ -4,7 +4,6 @@
 	grid-template-columns: auto 1fr auto;
 	align-items: center;
 	justify-items: right;
-	column-gap: 20px;
 }
 
 .phone {
@@ -21,6 +20,7 @@
 }
 
 .btn {
+	margin-right: 20px;
 	background: var(--white);
 	border: none;
 }

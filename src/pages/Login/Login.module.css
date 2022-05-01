@@ -43,10 +43,6 @@
 	font-size: 12px;
 }
 
-.input:focus {
-	outline: 1px solid var(--blue);
-}
-
 .icon {
 	position: absolute;
 	top: 13px;

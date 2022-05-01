@@ -16,7 +16,11 @@ input {
 }
 
 input:focus {
-	outline: 1px solid var(--blue);
+	outline: 1px solid var(--green);
+}
+
+input:invalid:focus {
+	outline: 1px solid var(--red);
 }
 
 input:invalid:focus {
@@ -44,6 +48,7 @@ svg:hover {
 	--white: #fff;
 	--grey: #98989e;
 	--blue: #3183ff;
+	--green: #69cd63;
 	--gold: #fff172;
 	--red: #e7414c;
 }

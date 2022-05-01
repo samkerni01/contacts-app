@@ -17,20 +17,20 @@ function Contact({
 }: {
 	name: string;
 	phone: string;
-	id: number;
+	id: string;
 	i: number;
 }) {
 	return (
 		<div className={styles.wrapper}>
 			<ProfileIcon className={styles.icon} />
 
-			{UiStore.edit !== id ? (
+			{UiStore.edit !== i ? (
 				<>
 					<span className={styles.name}>{name}</span>
 
 					<span
 						className={styles.btn}
-						onClick={() => UiStore.setEdit(id)}
+						onClick={() => UiStore.setEdit(i)}
 					>
 						Edit
 					</span>
