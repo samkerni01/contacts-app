@@ -1,9 +1,9 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: minmax(auto, 404px);
+	padding: 48px 40px;
 	border: 2px solid #ececec;
 	border-radius: 16px;
-	padding: 48px 40px;
 }
 
 .title {
@@ -21,20 +21,20 @@
 }
 
 .text {
+	margin-top: 40px;
+	margin-bottom: 8px;
 	color: var(--black);
 	font-weight: 500;
 	font-size: 12px;
 	line-height: 16px;
-	margin-bottom: 8px;
-	margin-top: 40px;
 }
 
 .input {
 	width: calc(100% - 36px);
 	height: 40px;
+	padding-left: 36px;
 	border: 1px solid #d8d8d8;
 	border-radius: 24px;
-	padding-left: 36px;
 }
 
 .input::placeholder {
@@ -53,8 +53,8 @@
 	left: 15px;
 	width: 12px;
 	height: 15px;
-	fill: var(--grey);
 	cursor: unset;
+	fill: var(--grey);
 }
 
 .icon:hover {
@@ -63,13 +63,13 @@
 
 .btn {
 	width: 100%;
-	border: none;
-	background: var(--blue);
-	color: var(--white);
+	margin-top: 40px;
 	padding: 14px 0;
+	color: var(--white);
+	background: var(--blue);
+	border: none;
 	border-radius: 24px;
 	cursor: pointer;
-	margin-top: 40px;
 }
 
 .btn:hover {

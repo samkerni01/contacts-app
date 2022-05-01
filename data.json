@@ -5,9 +5,14 @@
   },
   "contacts": [
     {
-      "id": 1,
+      "id": ":rd:",
       "name": "Sam Kerniol",
       "phone": "+79996098988"
+    },
+    {
+      "id": ":r0:",
+      "name": "Sam Kerniol",
+      "phone": "3423423"
     }
   ]
 }

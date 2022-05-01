@@ -2,13 +2,13 @@
 	display: grid;
 	grid-template-columns: 1fr auto auto;
 	align-items: center;
-	border-bottom: 1px solid var(--grey);
 	padding-bottom: 10px;
+	border-bottom: 1px solid var(--grey);
 }
 
 .title {
-	font-size: 25px;
 	color: var(--black);
+	font-size: 25px;
 }
 
 .icon {

@@ -1,7 +1,13 @@
 .wrapper {
 	display: grid;
-	grid-template-columns: minmax(auto, 768px);
+	grid-template-columns: minmax(auto, 780px);
+	padding: 48px 40px;
 	border: 2px solid #ececec;
 	border-radius: 16px;
-	padding: 48px 40px;
+}
+
+@media screen and (max-width: 403px) {
+	.wrapper {
+		padding: 35px 20px;
+	}
 }

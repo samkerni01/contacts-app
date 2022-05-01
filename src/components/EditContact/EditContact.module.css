@@ -1,8 +1,22 @@
 .wrapper {
 	display: grid;
-	grid-template-columns: auto auto 1fr auto;
-	column-gap: 20px;
-	align-items: center;
 	grid-column: 2 / -1;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
 	justify-items: right;
+	column-gap: 20px;
+}
+
+.phone {
+	margin-top: 5px;
+}
+
+.icon,
+.btn {
+	margin-bottom: -28px;
+}
+
+.btn {
+	background: var(--white);
+	border: none;
 }

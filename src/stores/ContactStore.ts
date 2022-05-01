@@ -37,14 +37,14 @@ class ContactStore {
 		);
 	}
 
-	addContact(data: FormData) {
+	addContact(id: string, data: FormData) {
 		fetch('http://localhost:3001/contacts', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				id: this.contacts.length && this.contacts.length + 1,
+				id: id,
 				name: data.get('name'),
 				phone: data.get('phone')
 			})
@@ -52,7 +52,7 @@ class ContactStore {
 			.then((res) => res.json())
 			.then((json) => {
 				runInAction(() => {
-					this.contacts = [json, ...this.contacts];
+					this.contacts = [...this.contacts, json];
 					this.resetFilteredContacts();
 				});
 			});
@@ -61,6 +61,19 @@ class ContactStore {
 	deleteContact(id: number) {
 		fetch('http://localhost:3001/contacts/' + id, {
 			method: 'DELETE'
+		}).then(() => this.fetchContacts());
+	}
+
+	editContact(id: number, data: FormData) {
+		fetch('http://localhost:3001/contacts/' + id, {
+			method: 'PATCH',
+			headers: {
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify({
+				name: data.get('name'),
+				phone: data.get('phone')
+			})
 		}).then(() => this.fetchContacts());
 	}
 }

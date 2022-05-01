@@ -29,7 +29,6 @@ function ContactItem({
 			{UiStore.edit !== id ? (
 				<>
 					<span className={styles.name}>{name}</span>
-					<span className={styles.phone}>{phone}</span>
 
 					<span className={styles.btn} onClick={onClick}>
 						Edit
@@ -41,9 +40,11 @@ function ContactItem({
 					>
 						Delete
 					</span>
+
+					<span className={styles.phone}>{phone}</span>
 				</>
 			) : (
-				<EditContact name={name} phone={phone} />
+				<EditContact name={name} phone={phone} id={id} />
 			)}
 		</div>
 	);
