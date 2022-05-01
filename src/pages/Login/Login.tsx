@@ -1,17 +1,20 @@
-import AuthStore from '../../stores/AuthStore';
+import { observer } from 'mobx-react-lite';
+
+import LoginStore from '../../stores/LoginStore';
 
 import { ReactComponent as ProfileIcon } from '../../icons/profile.svg';
 import { ReactComponent as LockIcon } from './lock.svg';
 
-import styles from './Auth.module.css';
+import styles from './Login.module.css';
+import UiStore from '../../stores/UiStore';
 
-export default function Auth() {
+function Login() {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		const data = new FormData(e.currentTarget);
 
-		AuthStore.validation(data);
+		LoginStore.validation(data);
 	};
 
 	return (
@@ -24,10 +27,11 @@ export default function Auth() {
 				<ProfileIcon className={styles.icon} />
 
 				<input
-					className={styles.input}
 					type="text"
 					name="username"
 					placeholder="e.g.: admin"
+					required
+					className={styles.input}
 				/>
 			</div>
 
@@ -37,14 +41,21 @@ export default function Auth() {
 				<LockIcon className={styles.icon} />
 
 				<input
-					className={styles.input}
-					type="text"
+					type="password"
 					name="password"
 					placeholder="e.g.: admin"
+					required
+					className={styles.input}
 				/>
 			</div>
+
+			{UiStore.error && (
+				<p className={styles.error}>Wrong login or password</p>
+			)}
 
 			<button className={styles.btn}>Sign In</button>
 		</form>
 	);
 }
+
+export default observer(Login);

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 
-import ContactItem from '../ContactItem/ContactItem';
+import Contact from '../Contact/Contact';
 
 import ContactStore from '../../stores/ContactStore';
 
@@ -11,11 +11,12 @@ function ContactList() {
 		<div className={styles.wrapper}>
 			{ContactStore.filteredContacts.length > 0 ? (
 				<>
-					{ContactStore.filteredContacts.map((contact) => (
-						<ContactItem
+					{ContactStore.filteredContacts.map((contact, i) => (
+						<Contact
 							name={contact.name}
 							phone={contact.phone}
 							id={contact.id}
+							i={i}
 							key={contact.id}
 						/>
 					))}

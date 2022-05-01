@@ -1,6 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
 import ContactStore from './ContactStore';
+import UiStore from './UiStore';
 
 class AuthStore {
 	passed = false;
@@ -19,8 +20,11 @@ class AuthStore {
 				) {
 					runInAction(() => {
 						this.passed = true;
-						ContactStore.fetchContacts();
 					});
+
+					ContactStore.fetchContacts();
+				} else {
+					UiStore.setError();
 				}
 			});
 	}

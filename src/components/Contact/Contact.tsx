@@ -1,27 +1,25 @@
 import { observer } from 'mobx-react-lite';
 
-import EditContact from '../EditContact/EditContact';
+import Edit from '../Edit/Edit';
 
 import ContactStore from '../../stores/ContactStore';
 import UiStore from '../../stores/UiStore';
 
 import { ReactComponent as ProfileIcon } from '../../icons/profile.svg';
 
-import styles from './ContactItem.module.css';
+import styles from './Contact.module.css';
 
-function ContactItem({
+function Contact({
 	name,
 	phone,
-	id
+	id,
+	i
 }: {
 	name: string;
 	phone: string;
 	id: number;
+	i: number;
 }) {
-	const onClick = () => {
-		UiStore.setEdit(id);
-	};
-
 	return (
 		<div className={styles.wrapper}>
 			<ProfileIcon className={styles.icon} />
@@ -30,13 +28,16 @@ function ContactItem({
 				<>
 					<span className={styles.name}>{name}</span>
 
-					<span className={styles.btn} onClick={onClick}>
+					<span
+						className={styles.btn}
+						onClick={() => UiStore.setEdit(id)}
+					>
 						Edit
 					</span>
 
 					<span
 						className={styles.btn}
-						onClick={() => ContactStore.deleteContact(id)}
+						onClick={() => ContactStore.deleteContact(id, i)}
 					>
 						Delete
 					</span>
@@ -44,10 +45,10 @@ function ContactItem({
 					<span className={styles.phone}>{phone}</span>
 				</>
 			) : (
-				<EditContact name={name} phone={phone} id={id} />
+				<Edit name={name} phone={phone} id={id} i={i} />
 			)}
 		</div>
 	);
 }
 
-export default observer(ContactItem);
+export default observer(Contact);

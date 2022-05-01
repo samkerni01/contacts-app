@@ -1,20 +1,29 @@
 import { makeAutoObservable } from 'mobx';
 
+import ContactStore from './ContactStore';
+
 class UiStore {
 	form = false;
 	search = false;
+	error = false;
 	edit = 0;
 
 	constructor() {
 		makeAutoObservable(this);
 	}
 
-	setForm() {
+	toggleForm() {
 		this.form = !this.form;
 	}
 
-	setSearch() {
+	toggleSearch() {
 		this.search = !this.search;
+
+		ContactStore.resetFilteredContacts();
+	}
+
+	setError() {
+		this.error = true;
 	}
 
 	setEdit(id: number) {

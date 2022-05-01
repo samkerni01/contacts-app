@@ -11,6 +11,10 @@
 	margin-top: 5px;
 }
 
+.wrapper input {
+	width: 185px;
+}
+
 .icon,
 .btn {
 	margin-bottom: -28px;

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 
-import AddContact from '../AddContact/AddContact';
+import Add from '../Add/Add';
 import Search from '../Search/Search';
 
 import UiStore from '../../stores/UiStore';
@@ -8,27 +8,27 @@ import UiStore from '../../stores/UiStore';
 import { ReactComponent as SearchIcon } from './icons/search.svg';
 import { ReactComponent as AddIcon } from './icons/add.svg';
 
-import styles from './AppHeader.module.css';
+import styles from './Header.module.css';
 
-function AppHeader() {
+function Header() {
 	return (
 		<header className={styles.wrapper}>
 			<h1 className={styles.title}>Contact list</h1>
 
 			{UiStore.form ? (
-				<AddContact />
+				<Add />
 			) : UiStore.search ? (
 				<Search />
 			) : (
 				<>
 					<AddIcon
 						className={styles.icon}
-						onClick={() => UiStore.setForm()}
+						onClick={() => UiStore.toggleForm()}
 					/>
 
 					<SearchIcon
 						className={styles.icon}
-						onClick={() => UiStore.setSearch()}
+						onClick={() => UiStore.toggleSearch()}
 					/>
 				</>
 			)}
@@ -36,4 +36,4 @@ function AppHeader() {
 	);
 }
 
-export default observer(AppHeader);
+export default observer(Header);

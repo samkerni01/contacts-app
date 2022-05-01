@@ -5,8 +5,10 @@
 	"dependencies": {
 		"mobx": "^6.5.0",
 		"mobx-react-lite": "^3.3.0",
+		"nanoid": "^3.3.3",
 		"react": "^18.1.0",
-		"react-dom": "^18.1.0"
+		"react-dom": "^18.1.0",
+		"react-router-dom": "^6.3.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.8",

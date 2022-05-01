@@ -1,5 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
+import UiStore from './UiStore';
+
 interface List {
 	id: number;
 	name: string;
@@ -24,8 +26,9 @@ class ContactStore {
 			.then((json) => {
 				runInAction(() => {
 					this.contacts = json;
-					this.resetFilteredContacts();
 				});
+
+				this.resetFilteredContacts();
 			});
 	}
 
@@ -51,20 +54,19 @@ class ContactStore {
 		})
 			.then((res) => res.json())
 			.then((json) => {
-				runInAction(() => {
-					this.contacts = [...this.contacts, json];
-					this.resetFilteredContacts();
-				});
+				runInAction(() => this.contacts.push(json));
+
+				UiStore.toggleForm();
 			});
 	}
 
-	deleteContact(id: number) {
+	deleteContact(id: number, i: number) {
 		fetch('http://localhost:3001/contacts/' + id, {
 			method: 'DELETE'
-		}).then(() => this.fetchContacts());
+		}).then(() => runInAction(() => this.contacts.splice(i, 1)));
 	}
 
-	editContact(id: number, data: FormData) {
+	editContact(id: number, data: FormData, i: number) {
 		fetch('http://localhost:3001/contacts/' + id, {
 			method: 'PATCH',
 			headers: {
@@ -74,7 +76,13 @@ class ContactStore {
 				name: data.get('name'),
 				phone: data.get('phone')
 			})
-		}).then(() => this.fetchContacts());
+		})
+			.then((res) => res.json())
+			.then((json) => {
+				runInAction(() => this.contacts.splice(i, 1, json));
+
+				UiStore.setEdit(0);
+			});
 	}
 }
 
